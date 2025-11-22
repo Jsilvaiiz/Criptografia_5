@@ -1,0 +1,30 @@
+services:
+  c1:
+    build: ./C1
+    container_name: C1
+    networks:
+      - sshnet
+
+  c2:
+    build: ./C2
+    container_name: C2
+    networks:
+      - sshnet
+
+  c3:
+    build: ./C3
+    container_name: C3
+    networks:
+      - sshnet
+
+  c4:
+    build: ./C4
+    container_name: C4
+    ports:
+      - "2222:22"
+    networks:
+      - sshnet
+
+networks:
+  sshnet:
+    driver: bridge
